@@ -1,5 +1,8 @@
+'use client';
+
 import { TrendingUp, BarChart3, Settings } from 'lucide-react';
 import ServiceCard from '@/components/ui/ServiceCard';
+import { useScrollAnimation } from '@/lib/hooks/useScrollAnimation';
 
 interface ServicesSectionProps {
   translations: {
@@ -27,11 +30,12 @@ interface ServicesSectionProps {
 
 export default function ServicesSection({ translations }: ServicesSectionProps) {
   const { services } = translations;
+  const { elementRef, isVisible } = useScrollAnimation({ threshold: 0.15 });
 
   return (
     <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900/50">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
+      <div ref={elementRef} className="max-w-7xl mx-auto">
+        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             {services.title}
           </h2>
@@ -41,35 +45,41 @@ export default function ServicesSection({ translations }: ServicesSectionProps) 
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          <ServiceCard
-            icon={TrendingUp}
-            iconColor="bg-purple-500/20"
-            bgGradient="bg-gradient-to-br from-purple-900/50 to-blue-900/50"
-            borderColor="border border-purple-500/20"
-            title={services.sports.title}
-            description={services.sports.description}
-            features={services.sports.features}
-          />
+          <div className={`transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <ServiceCard
+              icon={TrendingUp}
+              iconColor="bg-purple-500/20"
+              bgGradient="bg-gradient-to-br from-purple-900/50 to-blue-900/50"
+              borderColor="border border-purple-500/20"
+              title={services.sports.title}
+              description={services.sports.description}
+              features={services.sports.features}
+            />
+          </div>
 
-          <ServiceCard
-            icon={BarChart3}
-            iconColor="bg-blue-500/20"
-            bgGradient="bg-gradient-to-br from-blue-900/50 to-cyan-900/50"
-            borderColor="border border-blue-500/20"
-            title={services.finance.title}
-            description={services.finance.description}
-            features={services.finance.features}
-          />
+          <div className={`transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <ServiceCard
+              icon={BarChart3}
+              iconColor="bg-blue-500/20"
+              bgGradient="bg-gradient-to-br from-blue-900/50 to-cyan-900/50"
+              borderColor="border border-blue-500/20"
+              title={services.finance.title}
+              description={services.finance.description}
+              features={services.finance.features}
+            />
+          </div>
 
-          <ServiceCard
-            icon={Settings}
-            iconColor="bg-cyan-500/20"
-            bgGradient="bg-gradient-to-br from-cyan-900/50 to-teal-900/50"
-            borderColor="border border-cyan-500/20"
-            title={services.production.title}
-            description={services.production.description}
-            features={services.production.features}
-          />
+          <div className={`transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+            <ServiceCard
+              icon={Settings}
+              iconColor="bg-cyan-500/20"
+              bgGradient="bg-gradient-to-br from-cyan-900/50 to-teal-900/50"
+              borderColor="border border-cyan-500/20"
+              title={services.production.title}
+              description={services.production.description}
+              features={services.production.features}
+            />
+          </div>
         </div>
       </div>
     </section>
