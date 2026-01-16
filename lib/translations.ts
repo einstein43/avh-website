@@ -19,7 +19,7 @@ export const translations = {
       subtitle: 'Innovatieve AI-oplossingen op maat voor jouw sector',
       sports: {
         title: 'Sport & Performance',
-        description: 'Voorspellende analytics voor sportprestaties, data-gedreven training insights en geautomatiseerde performance tracking systemen.',
+        description: 'Voorspellende analytics voor sportprestaties, data-gedreven training inzichten en geautomatiseerde performance tracking systemen.',
         features: ['Prestatie Analytics', 'Training Optimalisatie', 'Real-time Monitoring'],
       },
       finance: {
@@ -50,7 +50,7 @@ export const translations = {
       },
       data: {
         title: 'Data & Analytics',
-        tools: ['Python', 'Pandas', 'SQL', 'Data Scraping', 'ACF Fields'],
+        tools: ['Python', 'Pandas', 'SQL', 'Data Scraping', 'ACF'],
       },
     },
     blog: {
