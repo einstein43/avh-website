@@ -37,10 +37,10 @@ export default function TechnologySection({ translations }: TechnologySectionPro
     <section id="tech" className="py-20 px-4 sm:px-6 lg:px-8">
       <div ref={elementRef} className="max-w-7xl mx-auto">
         <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-linen mb-4">
             {tech.title}
           </h2>
-          <p className="text-xl text-gray-400">
+          <p className="text-xl text-khaki">
             {tech.subtitle}
           </p>
         </div>
@@ -49,7 +49,7 @@ export default function TechnologySection({ translations }: TechnologySectionPro
           <div className={`transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
             <TechCard
               icon={Brain}
-              iconColor="text-purple-400"
+              iconColor="text-sunflower"
               title={tech.ai.title}
               tools={tech.ai.tools}
             />
@@ -58,7 +58,7 @@ export default function TechnologySection({ translations }: TechnologySectionPro
           <div className={`transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
             <TechCard
               icon={Zap}
-              iconColor="text-blue-400"
+              iconColor="text-indigo"
               title={tech.automation.title}
               tools={tech.automation.tools}
             />
@@ -67,7 +67,7 @@ export default function TechnologySection({ translations }: TechnologySectionPro
           <div className={`transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
             <TechCard
               icon={Code}
-              iconColor="text-cyan-400"
+              iconColor="text-sunflower-light"
               title={tech.web.title}
               tools={tech.web.tools}
             />
@@ -76,7 +76,7 @@ export default function TechnologySection({ translations }: TechnologySectionPro
           <div className={`transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
             <TechCard
               icon={Database}
-              iconColor="text-green-400"
+              iconColor="text-khaki"
               title={tech.data.title}
               tools={tech.data.tools}
             />

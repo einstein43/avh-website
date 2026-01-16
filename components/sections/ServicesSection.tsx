@@ -33,13 +33,13 @@ export default function ServicesSection({ translations }: ServicesSectionProps) 
   const { elementRef, isVisible } = useScrollAnimation({ threshold: 0.15 });
 
   return (
-    <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900/50">
+    <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 bg-carbon/50">
       <div ref={elementRef} className="max-w-7xl mx-auto">
         <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-linen mb-4">
             {services.title}
           </h2>
-          <p className="text-xl text-gray-400">
+          <p className="text-xl text-khaki">
             {services.subtitle}
           </p>
         </div>
@@ -48,9 +48,9 @@ export default function ServicesSection({ translations }: ServicesSectionProps) 
           <div className={`transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <ServiceCard
               icon={TrendingUp}
-              iconColor="bg-purple-500/20"
-              bgGradient="bg-gradient-to-br from-purple-900/50 to-blue-900/50"
-              borderColor="border border-purple-500/20"
+              iconColor="bg-sunflower/20"
+              bgGradient="bg-gradient-to-br from-indigo/50 to-sunflower/30"
+              borderColor="border border-sunflower/20"
               title={services.sports.title}
               description={services.sports.description}
               features={services.sports.features}
@@ -60,9 +60,9 @@ export default function ServicesSection({ translations }: ServicesSectionProps) 
           <div className={`transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <ServiceCard
               icon={BarChart3}
-              iconColor="bg-blue-500/20"
-              bgGradient="bg-gradient-to-br from-blue-900/50 to-cyan-900/50"
-              borderColor="border border-blue-500/20"
+              iconColor="bg-indigo/20"
+              bgGradient="bg-gradient-to-br from-sunflower/30 to-indigo/50"
+              borderColor="border border-indigo/20"
               title={services.finance.title}
               description={services.finance.description}
               features={services.finance.features}
@@ -72,9 +72,9 @@ export default function ServicesSection({ translations }: ServicesSectionProps) 
           <div className={`transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <ServiceCard
               icon={Settings}
-              iconColor="bg-cyan-500/20"
-              bgGradient="bg-gradient-to-br from-cyan-900/50 to-teal-900/50"
-              borderColor="border border-cyan-500/20"
+              iconColor="bg-khaki/20"
+              bgGradient="bg-gradient-to-br from-indigo/50 to-khaki/30"
+              borderColor="border border-khaki/20"
               title={services.production.title}
               description={services.production.description}
               features={services.production.features}

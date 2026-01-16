@@ -56,13 +56,13 @@ function StatItem({ icon: Icon, value, label, suffix = '', delay, isVisible }: S
       className={`text-center p-8 transition-all duration-700 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
       style={{ transitionDelay: `${delay}ms` }}
     >
-      <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-purple-500/20 to-blue-500/20 rounded-full mb-4">
-        <Icon className="h-8 w-8 text-purple-400" />
+      <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-sunflower/20 to-indigo/20 rounded-full mb-4">
+        <Icon className="h-8 w-8 text-sunflower" />
       </div>
-      <div className="text-5xl font-bold text-white mb-2">
+      <div className="text-5xl font-bold text-linen mb-2">
         {count}{suffix}
       </div>
-      <div className="text-gray-400 text-lg">{label}</div>
+      <div className="text-khaki text-lg">{label}</div>
     </div>
   );
 }
@@ -82,10 +82,10 @@ export default function StatsSection({ translations }: StatsSectionProps) {
     <section ref={elementRef} className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900/30">
       <div className="max-w-7xl mx-auto">
         <div className={`text-center mb-12 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-linen mb-4">
             {stats.title}
           </h2>
-          <p className="text-xl text-gray-400">
+          <p className="text-xl text-khaki">
             {stats.subtitle}
           </p>
         </div>

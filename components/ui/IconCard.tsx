@@ -9,11 +9,11 @@ interface IconCardProps {
 function IconCard({ icon: Icon, label, delay }: IconCardProps) {
   return (
     <div
-      className="flex flex-col items-center p-6 bg-white/5 backdrop-blur rounded-xl hover:bg-white/10 transition card-hover"
+      className="flex flex-col items-center p-6 bg-linen/5 backdrop-blur rounded-xl hover:bg-linen/10 transition card-hover"
       style={{ animationDelay: `${delay}ms` }}
     >
-      <Icon className="h-10 w-10 text-purple-400 mb-3" />
-      <span className="text-gray-300 font-medium">{label}</span>
+      <Icon className="h-10 w-10 text-sunflower mb-3" />
+      <span className="text-khaki font-medium">{label}</span>
     </div>
   );
 }

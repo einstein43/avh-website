@@ -95,29 +95,29 @@ export default function ContactSection({ language, translations }: ContactSectio
     <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8">
       <div ref={elementRef} className="max-w-4xl mx-auto">
         <div className={`text-center mb-12 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-linen mb-4">
             {contact.title}
           </h2>
-          <p className="text-xl text-gray-400">
+          <p className="text-xl text-khaki">
             {contact.subtitle}
           </p>
         </div>
 
-        <div className={`bg-gradient-to-br from-purple-900/50 to-blue-900/50 p-8 md:p-12 rounded-2xl backdrop-blur border border-purple-500/20 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div className={`bg-gradient-to-br from-indigo/50 to-sunflower/30 p-8 md:p-12 rounded-2xl backdrop-blur border border-sunflower/20 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           {status === 'success' ? (
             <div className="text-center py-8">
-              <CheckCircle className="h-16 w-16 text-green-400 mx-auto mb-4" />
-              <h3 className="text-2xl font-bold text-white mb-2">
+              <CheckCircle className="h-16 w-16 text-sunflower mx-auto mb-4" />
+              <h3 className="text-2xl font-bold text-linen mb-2">
                 {contact.successMessage}
               </h3>
-              <p className="text-gray-400 mb-6">
+              <p className="text-khaki mb-6">
                 {language === 'nl' 
                   ? 'We nemen zo snel mogelijk contact met je op!'
                   : "We'll get back to you as soon as possible!"}
               </p>
               <button
                 onClick={() => setStatus('idle')}
-                className="px-6 py-2 bg-white/10 hover:bg-white/20 text-white rounded-lg transition"
+                className="px-6 py-2 bg-linen/10 hover:bg-linen/20 text-linen rounded-lg transition"
               >
                 {language === 'nl' ? 'Nieuw bericht' : 'Send another message'}
               </button>
@@ -126,7 +126,7 @@ export default function ContactSection({ language, translations }: ContactSectio
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Name field */}
               <div>
-                <label className="block text-gray-300 mb-2 flex items-center gap-2">
+                <label className="block text-khaki mb-2 flex items-center gap-2">
                   <User className="h-4 w-4" />
                   {contact.namePlaceholder}
                 </label>
@@ -134,7 +134,7 @@ export default function ContactSection({ language, translations }: ContactSectio
                   type="text"
                   value={formData.name}
                   onChange={(e) => handleChange('name', e.target.value)}
-                  className={`w-full px-4 py-3 bg-slate-900/50 border ${errors.name ? 'border-red-500' : 'border-white/10'} rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-purple-500/50 transition`}
+                  className={`w-full px-4 py-3 bg-carbon/50 border ${errors.name ? 'border-red-500' : 'border-khaki/20'} rounded-lg text-linen placeholder-khaki-dark focus:outline-none focus:border-sunflower/50 transition`}
                   placeholder={contact.namePlaceholder}
                   disabled={status === 'loading'}
                 />
@@ -149,7 +149,7 @@ export default function ContactSection({ language, translations }: ContactSectio
               {/* Email and Company in a grid */}
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-gray-300 mb-2 flex items-center gap-2">
+                  <label className="block text-khaki mb-2 flex items-center gap-2">
                     <Mail className="h-4 w-4" />
                     {contact.emailPlaceholder}
                   </label>
@@ -157,7 +157,7 @@ export default function ContactSection({ language, translations }: ContactSectio
                     type="email"
                     value={formData.email}
                     onChange={(e) => handleChange('email', e.target.value)}
-                    className={`w-full px-4 py-3 bg-slate-900/50 border ${errors.email ? 'border-red-500' : 'border-white/10'} rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-purple-500/50 transition`}
+                    className={`w-full px-4 py-3 bg-carbon/50 border ${errors.email ? 'border-red-500' : 'border-khaki/20'} rounded-lg text-linen placeholder-khaki-dark focus:outline-none focus:border-sunflower/50 transition`}
                     placeholder={contact.emailPlaceholder}
                     disabled={status === 'loading'}
                   />
@@ -170,7 +170,7 @@ export default function ContactSection({ language, translations }: ContactSectio
                 </div>
 
                 <div>
-                  <label className="block text-gray-300 mb-2 flex items-center gap-2">
+                  <label className="block text-khaki mb-2 flex items-center gap-2">
                     <Building className="h-4 w-4" />
                     {contact.companyPlaceholder} {language === 'nl' ? '(optioneel)' : '(optional)'}
                   </label>
@@ -178,7 +178,7 @@ export default function ContactSection({ language, translations }: ContactSectio
                     type="text"
                     value={formData.company}
                     onChange={(e) => handleChange('company', e.target.value)}
-                    className="w-full px-4 py-3 bg-slate-900/50 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-purple-500/50 transition"
+                    className="w-full px-4 py-3 bg-carbon/50 border border-khaki/20 rounded-lg text-linen placeholder-khaki-dark focus:outline-none focus:border-sunflower/50 transition"
                     placeholder={contact.companyPlaceholder}
                     disabled={status === 'loading'}
                   />
@@ -187,7 +187,7 @@ export default function ContactSection({ language, translations }: ContactSectio
 
               {/* Message field */}
               <div>
-                <label className="block text-gray-300 mb-2 flex items-center gap-2">
+                <label className="block text-khaki mb-2 flex items-center gap-2">
                   <MessageSquare className="h-4 w-4" />
                   {contact.messagePlaceholder}
                 </label>
@@ -195,7 +195,7 @@ export default function ContactSection({ language, translations }: ContactSectio
                   value={formData.message}
                   onChange={(e) => handleChange('message', e.target.value)}
                   rows={6}
-                  className={`w-full px-4 py-3 bg-slate-900/50 border ${errors.message ? 'border-red-500' : 'border-white/10'} rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-purple-500/50 transition resize-none`}
+                  className={`w-full px-4 py-3 bg-carbon/50 border ${errors.message ? 'border-red-500' : 'border-khaki/20'} rounded-lg text-linen placeholder-khaki-dark focus:outline-none focus:border-sunflower/50 transition resize-none`}
                   placeholder={contact.messagePlaceholder}
                   disabled={status === 'loading'}
                 />
@@ -211,11 +211,11 @@ export default function ContactSection({ language, translations }: ContactSectio
               <button
                 type="submit"
                 disabled={status === 'loading'}
-                className="w-full px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg font-semibold hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center gap-2 shadow-lg hover:shadow-purple-500/50"
+                className="w-full px-8 py-4 bg-gradient-to-r from-sunflower to-indigo text-linen rounded-lg font-semibold hover:from-sunflower-dark hover:to-indigo-dark transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center gap-2 shadow-lg hover:shadow-sunflower/50"
               >
                 {status === 'loading' ? (
                   <>
-                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                    <div className="w-5 h-5 border-2 border-linen/30 border-t-linen rounded-full animate-spin" />
                     {contact.submitting}
                   </>
                 ) : (

@@ -23,29 +23,29 @@ export default function ProcessSection({ translations }: ProcessSectionProps) {
 
   const icons = [Search, Lightbulb, Code, TrendingUp];
   const colors = [
-    { bg: 'bg-purple-500/20', text: 'text-purple-400', border: 'border-purple-500/30' },
-    { bg: 'bg-blue-500/20', text: 'text-blue-400', border: 'border-blue-500/30' },
-    { bg: 'bg-cyan-500/20', text: 'text-cyan-400', border: 'border-cyan-500/30' },
-    { bg: 'bg-green-500/20', text: 'text-green-400', border: 'border-green-500/30' },
+    { bg: 'bg-sunflower/20', text: 'text-sunflower', border: 'border-sunflower/30' },
+    { bg: 'bg-indigo/20', text: 'text-indigo', border: 'border-indigo/30' },
+    { bg: 'bg-sunflower-light/20', text: 'text-sunflower-light', border: 'border-sunflower-light/30' },
+    { bg: 'bg-khaki/20', text: 'text-khaki', border: 'border-khaki/30' },
   ];
 
   return (
-    <section ref={elementRef} className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900/30 relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl" />
+    <section ref={elementRef} className="py-20 px-4 sm:px-6 lg:px-8 bg-carbon/30 relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-96 h-96 bg-sunflower/5 rounded-full blur-3xl" />
       
       <div className="max-w-7xl mx-auto relative z-10">
         <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-linen mb-4">
             {process.title}
           </h2>
-          <p className="text-xl text-gray-400">
+          <p className="text-xl text-khaki">
             {process.subtitle}
           </p>
         </div>
 
         <div className="relative">
           {/* Connection line */}
-          <div className="hidden lg:block absolute top-24 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-500 via-blue-500 via-cyan-500 to-green-500 opacity-20" />
+          <div className="hidden lg:block absolute top-24 left-0 right-0 h-0.5 bg-gradient-to-r from-sunflower via-indigo via-sunflower-light to-khaki opacity-20" />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {process.steps.map((step, idx) => {
@@ -59,21 +59,21 @@ export default function ProcessSection({ translations }: ProcessSectionProps) {
                   style={{ transitionDelay: `${idx * 150}ms` }}
                 >
                   {/* Step number badge */}
-                  <div className="absolute -top-4 -left-4 w-8 h-8 bg-gradient-to-br from-purple-600 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg z-10">
+                  <div className="absolute -top-4 -left-4 w-8 h-8 bg-gradient-to-br from-sunflower to-indigo rounded-full flex items-center justify-center text-linen font-bold text-sm shadow-lg z-10">
                     {idx + 1}
                   </div>
 
                   {/* Card */}
-                  <div className={`bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur p-6 rounded-xl border ${color.border} hover:scale-105 transition-transform duration-300 h-full`}>
+                  <div className={`bg-gradient-to-br from-carbon/50 to-carbon-light/50 backdrop-blur p-6 rounded-xl border ${color.border} hover:scale-105 transition-transform duration-300 h-full`}>
                     <div className={`w-16 h-16 ${color.bg} rounded-lg flex items-center justify-center mb-4`}>
                       <Icon className={`h-8 w-8 ${color.text}`} />
                     </div>
                     
-                    <h3 className="text-xl font-bold text-white mb-2">
+                    <h3 className="text-xl font-bold text-linen mb-2">
                       {step.title}
                     </h3>
                     
-                    <p className="text-gray-400 mb-4">
+                    <p className="text-khaki mb-4">
                       {step.description}
                     </p>
                     

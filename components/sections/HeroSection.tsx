@@ -45,21 +45,21 @@ export default function HeroSection({ translations }: HeroSectionProps) {
     <section id="home" className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Animated background gradients with parallax */}
       <div 
-        className="absolute inset-0 bg-gradient-radial from-purple-900/20 via-transparent to-transparent animate-pulse-slow"
+        className="absolute inset-0 bg-gradient-radial from-indigo/20 via-transparent to-transparent animate-pulse-slow"
         style={{
           transform: `translate(${mousePosition.x}px, ${mousePosition.y}px)`,
           transition: 'transform 0.3s ease-out',
         }}
       />
       <div 
-        className="absolute top-1/4 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-float"
+        className="absolute top-1/4 right-1/4 w-96 h-96 bg-sunflower/10 rounded-full blur-3xl animate-float"
         style={{
           transform: `translate(${-mousePosition.x * 0.5}px, ${-mousePosition.y * 0.5}px)`,
           transition: 'transform 0.3s ease-out',
         }}
       />
       <div 
-        className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-float"
+        className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-indigo/10 rounded-full blur-3xl animate-float"
         style={{
           animationDelay: '1.5s',
           transform: `translate(${mousePosition.x * 0.3}px, ${mousePosition.y * 0.3}px)`,
@@ -69,33 +69,33 @@ export default function HeroSection({ translations }: HeroSectionProps) {
       
       <div ref={elementRef} className={`max-w-7xl mx-auto relative z-10 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         <div className="text-center">
-          <div className="inline-flex items-center space-x-2 bg-purple-500/20 rounded-full px-4 py-2 mb-6 animate-fade-in">
-            <Sparkles className="h-4 w-4 text-purple-400" />
-            <span className="text-sm text-purple-300">AI Software Solutions</span>
+          <div className="inline-flex items-center space-x-2 bg-sunflower/20 rounded-full px-4 py-2 mb-6 animate-fade-in">
+            <Sparkles className="h-4 w-4 text-sunflower" />
+            <span className="text-sm text-sunflower-light">AI Software Solutions</span>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 animate-slide-up">
+          <h1 className="text-5xl md:text-7xl font-bold text-linen mb-6 animate-slide-up">
             {hero.title}
             <br />
             <span className="gradient-text">{hero.titleHighlight}</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-gray-300 mb-10 max-w-3xl mx-auto animate-slide-up">
+          <p className="text-xl md:text-2xl text-khaki mb-10 max-w-3xl mx-auto animate-slide-up">
             {hero.subtitle}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up">
             <a
               href="#contact"
-              className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg font-semibold hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/50 relative overflow-hidden"
+              className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-sunflower to-indigo text-linen rounded-lg font-semibold hover:from-sunflower-dark hover:to-indigo-dark transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-sunflower/50 relative overflow-hidden"
             >
               <span className="relative z-10">{hero.cta}</span>
               <ArrowRight className="ml-2 h-5 w-5 relative z-10 group-hover:translate-x-1 transition-transform duration-300" />
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-700 to-blue-700 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-r from-sunflower-dark to-indigo-dark opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </a>
             <a
               href="#services"
-              className="group inline-flex items-center px-8 py-4 bg-white/10 backdrop-blur text-white rounded-lg font-semibold hover:bg-white/20 transition-all duration-300 border border-white/20 hover:border-white/40 hover:shadow-xl transform hover:scale-105"
+              className="group inline-flex items-center px-8 py-4 bg-linen/10 backdrop-blur text-linen rounded-lg font-semibold hover:bg-linen/20 transition-all duration-300 border border-khaki/20 hover:border-sunflower/40 hover:shadow-xl transform hover:scale-105"
             >
               {hero.ctaSecondary}
               <ChevronRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />

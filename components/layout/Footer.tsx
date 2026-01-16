@@ -16,7 +16,7 @@ export default function Footer({ translations: footerTranslations }: FooterProps
   const newsletterTranslations = translations.en.newsletter;
 
   return (
-    <footer className="py-12 px-4 sm:px-6 lg:px-8 border-t border-white/10 bg-slate-900/50">
+    <footer className="py-12 px-4 sm:px-6 lg:px-8 border-t border-khaki/10 bg-carbon/50">
       <div className="max-w-7xl mx-auto">
         {/* Newsletter Section */}
         <div className="mb-12">
@@ -24,12 +24,12 @@ export default function Footer({ translations: footerTranslations }: FooterProps
         </div>
 
         {/* Footer Bottom */}
-        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10">
+        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-khaki/10">
           <div className="flex items-center space-x-2 mb-4 md:mb-0">
-            <Brain className="h-6 w-6 text-purple-400" />
-            <span className="text-xl font-bold text-white">A-VH</span>
+            <Brain className="h-6 w-6 text-sunflower" />
+            <span className="text-xl font-bold text-linen">A-VH</span>
           </div>
-          <div className="text-gray-400 text-sm">
+          <div className="text-khaki text-sm">
             © 2026 {footerTranslations.company}. {footerTranslations.rights}
           </div>
         </div>
