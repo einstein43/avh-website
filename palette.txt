@@ -1,0 +1,29 @@
+- CSV
+
+191716,e6af2e,e0e2db,3d348b,beb7a4
+
+- With #
+
+#191716, #e6af2e, #e0e2db, #3d348b, #beb7a4
+
+- Array
+
+["191716","e6af2e","e0e2db","3d348b","beb7a4"]
+
+- Object
+
+{"Carbon Black":"191716","Sunflower Gold":"e6af2e","Soft Linen":"e0e2db","Indigo Velvet":"3d348b","Khaki Beige":"beb7a4"}
+
+- Extended Array
+
+[{"name":"Carbon Black","hex":"191716","rgb":[25,23,22],"cmyk":[0,8,12,90],"hsb":[20,12,10],"hsl":[20,6,9],"lab":[8,1,1]},{"name":"Sunflower Gold","hex":"e6af2e","rgb":[230,175,46],"cmyk":[0,24,80,10],"hsb":[42,80,90],"hsl":[42,79,54],"lab":[75,9,68]},{"name":"Soft Linen","hex":"e0e2db","rgb":[224,226,219],"cmyk":[1,0,3,11],"hsb":[77,3,89],"hsl":[77,11,87],"lab":[90,-2,3]},{"name":"Indigo Velvet","hex":"3d348b","rgb":[61,52,139],"cmyk":[56,63,0,45],"hsb":[246,63,55],"hsl":[246,46,37],"lab":[28,29,-47]},{"name":"Khaki Beige","hex":"beb7a4","rgb":[190,183,164],"cmyk":[0,4,14,25],"hsb":[44,14,75],"hsl":[44,17,69],"lab":[75,-1,11]}]
+
+- XML
+
+<palette>
+  <color name="Carbon Black" hex="191716" r="25" g="23" b="22" />
+  <color name="Sunflower Gold" hex="e6af2e" r="230" g="175" b="46" />
+  <color name="Soft Linen" hex="e0e2db" r="224" g="226" b="219" />
+  <color name="Indigo Velvet" hex="3d348b" r="61" g="52" b="139" />
+  <color name="Khaki Beige" hex="beb7a4" r="190" g="183" b="164" />
+</palette>
