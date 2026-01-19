@@ -3,20 +3,38 @@
 @tailwind utilities;
 
 :root {
+  /* Color Palette */
+  --primary-deep-circuit-blue: 10, 46, 80;
+  --secondary-bio-digital-green: 123, 192, 67;
+  --tertiary-data-stream-teal: 15, 150, 160;
+  --accent-innovation-orange: 232, 68, 39;
+  --neutral-dark-slate-grey: 68, 146, 176;
+  --neutral-light-stark-white: 255, 255, 255;
+
+  /* Legacy variables (for compatibility) */
   --foreground-rgb: 25, 23, 22;
   --background-start-rgb: 224, 226, 219;
   --background-end-rgb: 190, 183, 164;
-  --accent-gold: 230, 175, 46;
-  --accent-indigo: 61, 52, 139;
+  --accent-gold: 232, 68, 39;
+  --accent-indigo: 10, 46, 80;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
+    /* Color Palette */
+    --primary-deep-circuit-blue: 10, 46, 80;
+    --secondary-bio-digital-green: 123, 192, 67;
+    --tertiary-data-stream-teal: 15, 150, 160;
+    --accent-innovation-orange: 232, 68, 39;
+    --neutral-dark-slate-grey: 68, 146, 176;
+    --neutral-light-stark-white: 255, 255, 255;
+
+    /* Legacy variables (for compatibility) */
     --foreground-rgb: 224, 226, 219;
     --background-start-rgb: 25, 23, 22;
     --background-end-rgb: 42, 39, 37;
-    --accent-gold: 230, 175, 46;
-    --accent-indigo: 61, 52, 139;
+    --accent-gold: 232, 68, 39;
+    --accent-indigo: 10, 46, 80;
   }
 }
 
@@ -41,7 +59,7 @@ html {
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #e6af2e 0%, #3d348b 100%);
+  background: linear-gradient(135deg, #7BC043 0%, #0A2E50 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
