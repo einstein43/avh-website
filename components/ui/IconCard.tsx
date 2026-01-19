@@ -12,7 +12,7 @@ function IconCard({ icon: Icon, label, delay }: IconCardProps) {
       className="flex flex-col items-center p-6 bg-linen/5 backdrop-blur rounded-xl hover:bg-linen/10 transition card-hover"
       style={{ animationDelay: `${delay}ms` }}
     >
-      <Icon className="h-10 w-10 text-sunflower mb-3" />
+      <Icon className="h-10 w-10 text-accent-orange mb-3" />
       <span className="text-khaki font-medium">{label}</span>
     </div>
   );

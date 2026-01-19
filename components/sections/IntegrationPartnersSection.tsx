@@ -60,9 +60,9 @@ export default function IntegrationPartnersSection({ translations }: Integration
 
         {/* Custom integrations note */}
         <div className={`mt-12 text-center transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <div className="inline-block bg-purple-500/10 border border-purple-500/20 rounded-lg px-6 py-3">
+          <div className="inline-block bg-primary-blue-500/10 border border-purple-500/20 rounded-lg px-6 py-3">
             <p className="text-gray-300">
-              <span className="text-purple-400 font-semibold">+</span> Custom API integrations available for any platform
+              <span className="text-primary-blue-400 font-semibold">+</span> Custom API integrations available for any platform
             </p>
           </div>
         </div>

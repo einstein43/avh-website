@@ -58,26 +58,26 @@ export default function ProblemSolutionSection({ translations }: ProblemSolution
 
                   {/* Mobile Arrow */}
                   <div className="md:hidden flex justify-center py-2">
-                    <div className="w-10 h-10 bg-gradient-to-b from-red-600 to-purple-600 rounded-full flex items-center justify-center shadow-lg">
+                    <div className="w-10 h-10 bg-gradient-to-b from-red-600 to-primary-blue-600 rounded-full flex items-center justify-center shadow-lg">
                       <ArrowRight className="h-5 w-5 text-white rotate-90" />
                     </div>
                   </div>
 
                   {/* Desktop Arrow 1 */}
                   <div className="hidden md:flex absolute left-1/3 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-                    <div className="w-12 h-12 bg-gradient-to-r from-red-600 to-purple-600 rounded-full flex items-center justify-center shadow-lg border-2 border-slate-900">
+                    <div className="w-12 h-12 bg-gradient-to-r from-red-600 to-primary-blue-600 rounded-full flex items-center justify-center shadow-lg border-2 border-slate-900">
                       <ArrowRight className="h-6 w-6 text-white" />
                     </div>
                   </div>
 
                   {/* Solution */}
-                  <div className="p-6 md:p-8 border-b md:border-b-0 md:border-r border-white/10 bg-purple-500/5">
+                  <div className="p-6 md:p-8 border-b md:border-b-0 md:border-r border-white/10 bg-primary-blue-500/5">
                     <div className="flex items-start gap-3">
-                      <div className="w-10 h-10 bg-purple-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
-                        <CheckCircle className="h-5 w-5 text-purple-400" />
+                      <div className="w-10 h-10 bg-primary-blue-500/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <CheckCircle className="h-5 w-5 text-primary-blue-400" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-purple-400 text-sm mb-2">Solution</h3>
+                        <h3 className="font-semibold text-primary-blue-400 text-sm mb-2">Solution</h3>
                         <p className="text-white text-sm">{scenario.solution}</p>
                       </div>
                     </div>
@@ -85,14 +85,14 @@ export default function ProblemSolutionSection({ translations }: ProblemSolution
 
                   {/* Mobile Arrow 2 */}
                   <div className="md:hidden flex justify-center py-2">
-                    <div className="w-10 h-10 bg-gradient-to-b from-purple-600 to-green-600 rounded-full flex items-center justify-center shadow-lg">
+                    <div className="w-10 h-10 bg-gradient-to-b from-primary-blue-600 to-green-600 rounded-full flex items-center justify-center shadow-lg">
                       <ArrowRight className="h-5 w-5 text-white rotate-90" />
                     </div>
                   </div>
 
                   {/* Desktop Arrow 2 */}
                   <div className="hidden md:flex absolute left-2/3 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
-                    <div className="w-12 h-12 bg-gradient-to-r from-purple-600 to-green-600 rounded-full flex items-center justify-center shadow-lg border-2 border-slate-900">
+                    <div className="w-12 h-12 bg-gradient-to-r from-primary-blue-600 to-green-600 rounded-full flex items-center justify-center shadow-lg border-2 border-slate-900">
                       <ArrowRight className="h-6 w-6 text-white" />
                     </div>
                   </div>
@@ -119,7 +119,7 @@ export default function ProblemSolutionSection({ translations }: ProblemSolution
         <div className={`text-center mt-12 transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <a
             href="#contact"
-            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg font-semibold hover:from-purple-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-purple-500/50"
+            className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-blue-600 to-blue-600 text-white rounded-lg font-semibold hover:from-primary-blue-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-primary-blue-500/50"
           >
             {problemSolution.cta}
             <ArrowRight className="ml-2 h-5 w-5" />

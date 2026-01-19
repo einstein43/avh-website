@@ -24,7 +24,7 @@ export default function ServiceCard({
       <div className={`${iconColor} w-16 h-16 rounded-lg flex items-center justify-center mb-6`}>
         <Icon className={`h-8 w-8 ${iconColor.replace('/20', '').replace('bg-', 'text-')}`} />
       </div>
-      <h3 className="text-2xl font-bold text-linen mb-4">
+      <h3 className="text-2xl font-bold text-white mb-4">
         {title}
       </h3>
       <p className="text-khaki mb-6">

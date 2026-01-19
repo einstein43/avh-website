@@ -26,7 +26,7 @@ export default function CaseStudiesSection({ translations }: CaseStudiesSectionP
   const { elementRef, isVisible } = useScrollAnimation({ threshold: 0.15 });
 
   const gradients = [
-    'from-purple-900/50 to-blue-900/50',
+    'from-primary-blue-900/50 to-blue-900/50',
     'from-blue-900/50 to-cyan-900/50',
     'from-cyan-900/50 to-green-900/50',
   ];
@@ -53,7 +53,7 @@ export default function CaseStudiesSection({ translations }: CaseStudiesSectionP
               <div className={`bg-gradient-to-br ${gradients[idx]} backdrop-blur p-6 rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300 h-full flex flex-col group`}>
                 {/* Header */}
                 <div className="mb-4">
-                  <div className="text-sm text-purple-400 font-semibold mb-1">{item.industry}</div>
+                  <div className="text-sm text-primary-blue-400 font-semibold mb-1">{item.industry}</div>
                   <h3 className="text-2xl font-bold text-white">{item.client}</h3>
                 </div>
 
@@ -97,7 +97,7 @@ export default function CaseStudiesSection({ translations }: CaseStudiesSectionP
                 </div>
 
                 {/* Hover arrow */}
-                <div className="mt-4 flex items-center text-purple-400 opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="mt-4 flex items-center text-primary-blue-400 opacity-0 group-hover:opacity-100 transition-opacity">
                   <span className="text-sm font-semibold">{cases.cta}</span>
                   <ArrowRight className="h-4 w-4 ml-1 group-hover:translate-x-1 transition-transform" />
                 </div>

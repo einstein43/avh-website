@@ -27,8 +27,8 @@ export default function BlogSection({ language, translations }: BlogSectionProps
           </p>
         </div>
 
-        <div className="bg-gradient-to-br from-purple-900/30 to-blue-900/30 p-12 rounded-2xl backdrop-blur border border-purple-500/20 text-center">
-          <Globe className="h-16 w-16 text-purple-400 mx-auto mb-6 animate-float" />
+        <div className="bg-gradient-to-br from-primary-blue-900/30 to-blue-900/30 p-12 rounded-2xl backdrop-blur border border-purple-500/20 text-center">
+          <Globe className="h-16 w-16 text-primary-blue-400 mx-auto mb-6 animate-float" />
           <p className="text-2xl text-gray-300 mb-4">{blog.comingSoon}</p>
           <p className="text-gray-400">
             {language === 'nl' 

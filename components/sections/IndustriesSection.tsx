@@ -27,8 +27,8 @@ export default function IndustriesSection({ translations }: IndustriesSectionPro
     'from-orange-500/20 to-yellow-500/20',
     'from-blue-500/20 to-cyan-500/20',
     'from-green-500/20 to-emerald-500/20',
-    'from-purple-500/20 to-violet-500/20',
-    'from-indigo-500/20 to-blue-500/20',
+    'from-primary-blue-500/20 to-violet-500/20',
+    'from-primary-blue-600-500/20 to-blue-500/20',
   ];
 
   return (
@@ -70,7 +70,7 @@ export default function IndustriesSection({ translations }: IndustriesSectionPro
                   <ul className="space-y-2">
                     {item.useCases.map((useCase, uidx) => (
                       <li key={uidx} className="flex items-start gap-2 text-sm text-gray-300">
-                        <span className="text-purple-400 mt-1">→</span>
+                        <span className="text-primary-blue-400 mt-1">→</span>
                         <span>{useCase}</span>
                       </li>
                     ))}

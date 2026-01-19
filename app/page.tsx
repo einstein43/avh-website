@@ -34,7 +34,7 @@ export default function Home() {
 
   return (
     <ThemeProvider>
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 via-purple-50 to-blue-50 dark:from-slate-900 dark:via-purple-900 dark:to-slate-900 transition-colors duration-300">
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-primary-blue-50 to-tertiary-teal-50 dark:from-slate-950 dark:via-primary-blue-900 dark:to-slate-900 transition-colors duration-300">
         <Navigation 
         language={language} 
         onLanguageToggle={toggleLanguage}

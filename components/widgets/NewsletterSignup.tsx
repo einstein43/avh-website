@@ -57,13 +57,13 @@ export default function NewsletterSignup({ translations }: NewsletterSignupProps
   };
 
   return (
-    <div className="bg-gradient-to-r from-indigo/30 to-sunflower/30 backdrop-blur p-8 rounded-2xl border border-sunflower/20">
+    <div className="bg-gradient-to-r from-primary-blue-600/30 to-accent-orange/30 backdrop-blur p-8 rounded-2xl border border-sunflower/20">
       <div className="flex items-center gap-3 mb-4">
-        <div className="w-12 h-12 bg-sunflower/20 rounded-full flex items-center justify-center">
-          <Mail className="h-6 w-6 text-sunflower" />
+        <div className="w-12 h-12 bg-accent-orange/20 rounded-full flex items-center justify-center">
+          <Mail className="h-6 w-6 text-accent-orange" />
         </div>
         <div>
-          <h3 className="text-xl font-bold text-linen">{newsletter.title}</h3>
+          <h3 className="text-xl font-bold text-white">{newsletter.title}</h3>
           <p className="text-khaki text-sm">{newsletter.subtitle}</p>
         </div>
       </div>
@@ -75,12 +75,12 @@ export default function NewsletterSignup({ translations }: NewsletterSignupProps
           onChange={(e) => setEmail(e.target.value)}
           placeholder={newsletter.placeholder}
           disabled={status === 'loading' || status === 'success'}
-          className="flex-1 px-4 py-3 bg-carbon/50 border border-khaki/20 rounded-lg text-linen placeholder-khaki-dark focus:outline-none focus:border-sunflower/50 transition disabled:opacity-50"
+          className="flex-1 px-4 py-3 bg-carbon/50 border border-khaki/20 rounded-lg text-white placeholder-khaki-dark focus:outline-none focus:border-sunflower/50 transition disabled:opacity-50"
         />
         <button
           type="submit"
           disabled={status === 'loading' || status === 'success'}
-          className="px-6 py-3 bg-gradient-to-r from-sunflower to-indigo text-linen rounded-lg font-semibold hover:from-sunflower-dark hover:to-indigo-dark transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center gap-2"
+          className="px-6 py-3 bg-gradient-to-r from-accent-orange to-primary-blue-600 text-white rounded-lg font-semibold hover:from-accent-orange-dark hover:to-primary-blue-600-dark transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center gap-2"
         >
           {status === 'loading' ? (
             <div className="w-5 h-5 border-2 border-linen/30 border-t-linen rounded-full animate-spin" />
@@ -105,7 +105,7 @@ export default function NewsletterSignup({ translations }: NewsletterSignupProps
         </div>
       )}
       {status === 'success' && (
-        <div className="mt-3 flex items-center gap-2 text-sunflower text-sm">
+        <div className="mt-3 flex items-center gap-2 text-accent-orange text-sm">
           <CheckCircle className="h-4 w-4" />
           {message}
         </div>

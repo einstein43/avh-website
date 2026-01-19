@@ -49,12 +49,12 @@ export default function TestimonialsSection({ translations }: TestimonialsSectio
   return (
     <section ref={elementRef} className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900/50 relative overflow-hidden">
       {/* Background decoration */}
-<div className="absolute top-0 left-0 w-64 h-64 bg-sunflower/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 right-0 w-64 h-64 bg-indigo/5 rounded-full blur-3xl" />
+<div className="absolute top-0 left-0 w-64 h-64 bg-accent-orange/5 rounded-full blur-3xl" />
+      <div className="absolute bottom-0 right-0 w-64 h-64 bg-primary-blue-600/5 rounded-full blur-3xl" />
       
       <div className="max-w-5xl mx-auto relative z-10">
         <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h2 className="text-4xl md:text-5xl font-bold text-linen mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             {testimonials.title}
           </h2>
           <p className="text-xl text-khaki">
@@ -64,7 +64,7 @@ export default function TestimonialsSection({ translations }: TestimonialsSectio
 
         <div className={`relative transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
           {/* Quote icon */}
-          <Quote className="absolute -top-6 -left-4 h-16 w-16 text-purple-500/20 transform -rotate-12" />
+          <Quote className="absolute -top-6 -left-4 h-16 w-16 text-primary-blue-500/20 transform -rotate-12" />
           
           {/* Testimonial card */}
           <div 
@@ -89,13 +89,13 @@ export default function TestimonialsSection({ translations }: TestimonialsSectio
 
             {/* Author */}
             <div className="flex items-center justify-center gap-4">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center text-white text-xl font-bold">
+              <div className="w-16 h-16 bg-gradient-to-br from-primary-blue-500 to-blue-500 rounded-full flex items-center justify-center text-white text-xl font-bold">
                 {current.name.charAt(0)}
               </div>
               <div className="text-left">
                 <div className="text-white font-semibold text-lg">{current.name}</div>
                 <div className="text-gray-400">{current.role}</div>
-                <div className="text-purple-400 text-sm">{current.company}</div>
+                <div className="text-primary-blue-400 text-sm">{current.company}</div>
               </div>
             </div>
           </div>
@@ -124,7 +124,7 @@ export default function TestimonialsSection({ translations }: TestimonialsSectio
                 onClick={() => setCurrentIndex(idx)}
                 className={`w-2 h-2 rounded-full transition-all duration-300 ${
                   idx === currentIndex 
-                    ? 'bg-purple-500 w-8' 
+                    ? 'bg-primary-blue-500 w-8' 
                     : 'bg-gray-600 hover:bg-gray-500'
                 }`}
                 aria-label={`Go to testimonial ${idx + 1}`}

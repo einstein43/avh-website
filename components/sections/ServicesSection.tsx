@@ -36,7 +36,7 @@ export default function ServicesSection({ translations }: ServicesSectionProps) 
     <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 bg-carbon/50">
       <div ref={elementRef} className="max-w-7xl mx-auto">
         <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h2 className="text-4xl md:text-5xl font-bold text-linen mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             {services.title}
           </h2>
           <p className="text-xl text-khaki">
@@ -48,8 +48,8 @@ export default function ServicesSection({ translations }: ServicesSectionProps) 
           <div className={`transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <ServiceCard
               icon={TrendingUp}
-              iconColor="bg-sunflower/20"
-              bgGradient="bg-gradient-to-br from-indigo/50 to-sunflower/30"
+              iconColor="bg-accent-orange/20"
+              bgGradient="bg-gradient-to-br from-primary-blue-600/50 to-accent-orange/30"
               borderColor="border border-sunflower/20"
               title={services.sports.title}
               description={services.sports.description}
@@ -60,8 +60,8 @@ export default function ServicesSection({ translations }: ServicesSectionProps) 
           <div className={`transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <ServiceCard
               icon={BarChart3}
-              iconColor="bg-indigo/20"
-              bgGradient="bg-gradient-to-br from-sunflower/30 to-indigo/50"
+              iconColor="bg-primary-blue-600/20"
+              bgGradient="bg-gradient-to-br from-accent-orange/30 to-primary-blue-600/50"
               borderColor="border border-indigo/20"
               title={services.finance.title}
               description={services.finance.description}
@@ -73,7 +73,7 @@ export default function ServicesSection({ translations }: ServicesSectionProps) 
             <ServiceCard
               icon={Settings}
               iconColor="bg-khaki/20"
-              bgGradient="bg-gradient-to-br from-indigo/50 to-khaki/30"
+              bgGradient="bg-gradient-to-br from-primary-blue-600/50 to-khaki/30"
               borderColor="border border-khaki/20"
               title={services.production.title}
               description={services.production.description}

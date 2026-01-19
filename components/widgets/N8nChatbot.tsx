@@ -203,7 +203,7 @@ export default function N8nChatbot({
             {isLoading && (
               <div className="flex justify-start">
                 <div className="bg-slate-800/50 rounded-2xl px-4 py-3 border border-white/10">
-                  <Loader2 className="h-5 w-5 text-purple-400 animate-spin" />
+                  <Loader2 className="h-5 w-5 text-primary-blue-400 animate-spin" />
                 </div>
               </div>
             )}

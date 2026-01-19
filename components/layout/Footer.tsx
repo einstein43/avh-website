@@ -26,8 +26,8 @@ export default function Footer({ translations: footerTranslations }: FooterProps
         {/* Footer Bottom */}
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-khaki/10">
           <div className="flex items-center space-x-2 mb-4 md:mb-0">
-            <Brain className="h-6 w-6 text-sunflower" />
-            <span className="text-xl font-bold text-linen">A-VH</span>
+            <Brain className="h-6 w-6 text-accent-orange" />
+            <span className="text-xl font-bold text-white">A-VH</span>
           </div>
           <div className="text-khaki text-sm">
             © 2026 {footerTranslations.company}. {footerTranslations.rights}

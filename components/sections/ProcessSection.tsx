@@ -23,19 +23,19 @@ export default function ProcessSection({ translations }: ProcessSectionProps) {
 
   const icons = [Search, Lightbulb, Code, TrendingUp];
   const colors = [
-    { bg: 'bg-sunflower/20', text: 'text-sunflower', border: 'border-sunflower/30' },
-    { bg: 'bg-indigo/20', text: 'text-indigo', border: 'border-indigo/30' },
-    { bg: 'bg-sunflower-light/20', text: 'text-sunflower-light', border: 'border-sunflower-light/30' },
+    { bg: 'bg-accent-orange/20', text: 'text-accent-orange', border: 'border-sunflower/30' },
+    { bg: 'bg-primary-blue-600/20', text: 'text-primary-blue-600', border: 'border-indigo/30' },
+    { bg: 'bg-accent-orange-light/20', text: 'text-accent-orange-light', border: 'border-sunflower-light/30' },
     { bg: 'bg-khaki/20', text: 'text-khaki', border: 'border-khaki/30' },
   ];
 
   return (
     <section ref={elementRef} className="py-20 px-4 sm:px-6 lg:px-8 bg-carbon/30 relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-96 h-96 bg-sunflower/5 rounded-full blur-3xl" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-accent-orange/5 rounded-full blur-3xl" />
       
       <div className="max-w-7xl mx-auto relative z-10">
         <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h2 className="text-4xl md:text-5xl font-bold text-linen mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             {process.title}
           </h2>
           <p className="text-xl text-khaki">
@@ -45,7 +45,7 @@ export default function ProcessSection({ translations }: ProcessSectionProps) {
 
         <div className="relative">
           {/* Connection line */}
-          <div className="hidden lg:block absolute top-24 left-0 right-0 h-0.5 bg-gradient-to-r from-sunflower via-indigo via-sunflower-light to-khaki opacity-20" />
+          <div className="hidden lg:block absolute top-24 left-0 right-0 h-0.5 bg-gradient-to-r from-accent-orange via-indigo via-sunflower-light to-khaki opacity-20" />
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {process.steps.map((step, idx) => {
@@ -59,7 +59,7 @@ export default function ProcessSection({ translations }: ProcessSectionProps) {
                   style={{ transitionDelay: `${idx * 150}ms` }}
                 >
                   {/* Step number badge */}
-                  <div className="absolute -top-4 -left-4 w-8 h-8 bg-gradient-to-br from-sunflower to-indigo rounded-full flex items-center justify-center text-linen font-bold text-sm shadow-lg z-10">
+                  <div className="absolute -top-4 -left-4 w-8 h-8 bg-gradient-to-br from-accent-orange to-primary-blue-600 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-lg z-10">
                     {idx + 1}
                   </div>
 
@@ -69,7 +69,7 @@ export default function ProcessSection({ translations }: ProcessSectionProps) {
                       <Icon className={`h-8 w-8 ${color.text}`} />
                     </div>
                     
-                    <h3 className="text-xl font-bold text-linen mb-2">
+                    <h3 className="text-xl font-bold text-white mb-2">
                       {step.title}
                     </h3>
                     
@@ -84,7 +84,7 @@ export default function ProcessSection({ translations }: ProcessSectionProps) {
 
                   {/* Arrow connector */}
                   {idx < 3 && (
-                    <ArrowRight className="hidden lg:block absolute top-24 -right-12 h-8 w-8 text-purple-500/30" />
+                    <ArrowRight className="hidden lg:block absolute top-24 -right-12 h-8 w-8 text-primary-blue-500/30" />
                   )}
                 </div>
               );
