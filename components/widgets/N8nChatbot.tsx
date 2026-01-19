@@ -39,7 +39,6 @@ export default function N8nChatbot({
   const [sessionId, setSessionId] = useState<string>('');
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  // Initialize session
   useEffect(() => {
     let sid = localStorage.getItem('n8n_chat_session_id');
     if (!sid) {
@@ -73,7 +72,6 @@ export default function N8nChatbot({
     setIsLoading(true);
 
     try {
-      // N8n Chat Trigger expects POST request with chatInput and sessionId
       const response = await fetch(webhookUrl, {
         method: 'POST',
         headers: {
@@ -91,7 +89,6 @@ export default function N8nChatbot({
 
       const data = await response.json();
 
-      // N8n Chat Trigger returns response in 'output' field
       const botMessage: Message = {
         id: (Date.now() + 1).toString(),
         text: data.output || data.message || data.response || 'Sorry, ik kon dat niet verwerken.',
@@ -123,20 +120,11 @@ export default function N8nChatbot({
     }
   };
 
-  const positionClasses = position === 'bottom-right' 
-    ? 'right-4 sm:right-6' 
-    : 'left-4 sm:left-6';
-
   return (
     <>
-      {/* Chat Widget Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`fixed bottom-4 sm:bottom-6 ${positionClasses} z-50 
-          bg-gradient-to-r from-${primaryColor}-600 to-blue-600 
-          text-white rounded-full p-4 shadow-2xl 
-          hover:scale-110 transition-transform duration-300
-          hover:shadow-${primaryColor}-500/50`}
+        className="fixed bottom-4 right-4 z-50 bg-primary-gradient text-white rounded-full p-4 shadow-2xl hover:scale-110 transition duration-300"
         aria-label="Open chat"
       >
         {isOpen ? (
@@ -146,17 +134,10 @@ export default function N8nChatbot({
         )}
       </button>
 
-      {/* Chat Window */}
       {isOpen && (
-        <div className={`fixed bottom-20 sm:bottom-24 ${positionClasses} z-50 
-          w-[90vw] sm:w-96 h-[500px] sm:h-[600px] 
-          bg-slate-900/95 backdrop-blur-xl rounded-2xl shadow-2xl 
-          border border-${primaryColor}-500/20 flex flex-col
-          animate-slide-up`}>
+        <div className="fixed bottom-20 right-4 z-50 flex flex-col rounded-2xl shadow-2xl border border-primary-blue/20 animate-slide-up" style={{ width: '24rem', height: '600px', backgroundColor: 'rgba(15, 23, 42, 0.95)' }}>
           
-          {/* Header */}
-          <div className={`bg-gradient-to-r from-${primaryColor}-600 to-blue-600 
-            p-4 rounded-t-2xl flex items-center justify-between`}>
+          <div className="bg-primary-gradient p-4 rounded-t-2xl flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
                 <MessageCircle className="h-5 w-5 text-white" />
@@ -174,7 +155,6 @@ export default function N8nChatbot({
             </button>
           </div>
 
-          {/* Messages */}
           <div className="flex-1 overflow-y-auto p-4 space-y-4">
             {messages.map((message) => (
               <div
@@ -182,16 +162,17 @@ export default function N8nChatbot({
                 className={`flex ${message.sender === 'user' ? 'justify-end' : 'justify-start'}`}
               >
                 <div
-                  className={`max-w-[80%] rounded-2xl px-4 py-2 ${
-                    message.sender === 'user'
-                      ? `bg-gradient-to-r from-${primaryColor}-600 to-blue-600 text-white`
-                      : 'bg-slate-800/50 text-gray-200 border border-white/10'
-                  }`}
+                  style={{
+                    maxWidth: '80%',
+                    borderRadius: '1rem',
+                    padding: '1rem',
+                    backgroundColor: message.sender === 'user' ? 'var(--primary-blue)' : 'rgba(30, 41, 59, 0.5)',
+                    color: message.sender === 'user' ? 'white' : '#d1d5db',
+                    border: message.sender === 'user' ? 'none' : '1px solid rgba(255, 255, 255, 0.1)',
+                  }}
                 >
                   <p className="text-sm whitespace-pre-wrap">{message.text}</p>
-                  <span className={`text-xs mt-1 block ${
-                    message.sender === 'user' ? 'text-white/70' : 'text-gray-500'
-                  }`}>
+                  <span style={{ fontSize: '0.75rem', marginTop: '0.25rem', display: 'block', color: message.sender === 'user' ? 'rgba(255, 255, 255, 0.7)' : '#6b7280' }}>
                     {message.timestamp.toLocaleTimeString('nl-NL', { 
                       hour: '2-digit', 
                       minute: '2-digit' 
@@ -202,36 +183,36 @@ export default function N8nChatbot({
             ))}
             {isLoading && (
               <div className="flex justify-start">
-                <div className="bg-slate-800/50 rounded-2xl px-4 py-3 border border-white/10">
-                  <Loader2 className="h-5 w-5 text-primary-blue-400 animate-spin" />
+                <div style={{ backgroundColor: 'rgba(30, 41, 59, 0.5)', borderRadius: '1rem', padding: '1rem', border: '1px solid rgba(255, 255, 255, 0.1)' }}>
+                  <Loader2 className="h-5 w-5 text-primary-blue animate-spin" />
                 </div>
               </div>
             )}
             <div ref={messagesEndRef} />
           </div>
 
-          {/* Input */}
-          <div className="p-4 border-t border-white/10">
-            <div className="flex space-x-2">
+          <div className="p-4 border-t" style={{ borderColor: 'rgba(255, 255, 255, 0.1)' }}>
+            <div className="flex gap-2">
               <input
                 type="text"
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
                 onKeyPress={handleKeyPress}
                 placeholder="Typ je bericht..."
-                className="flex-1 bg-slate-800/50 text-white rounded-xl px-4 py-3 
-                  border border-white/10 focus:border-purple-500/50 
-                  focus:outline-none focus:ring-2 focus:ring-purple-500/20
-                  placeholder-gray-500"
+                style={{
+                  flex: 1,
+                  backgroundColor: 'rgba(30, 41, 59, 0.5)',
+                  color: 'white',
+                  borderRadius: '0.75rem',
+                  padding: '0.75rem 1rem',
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
+                }}
                 disabled={isLoading}
               />
               <button
                 onClick={sendMessage}
                 disabled={isLoading || !inputValue.trim()}
-                className={`bg-gradient-to-r from-${primaryColor}-600 to-blue-600 
-                  text-white rounded-xl p-3 
-                  hover:from-${primaryColor}-700 hover:to-blue-700 
-                  transition disabled:opacity-50 disabled:cursor-not-allowed`}
+                className="bg-primary-gradient text-white rounded-xl p-3 hover:scale-105 transition disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 <Send className="h-5 w-5" />
               </button>

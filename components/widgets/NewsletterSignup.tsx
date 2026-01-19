@@ -68,34 +68,48 @@ export default function NewsletterSignup({ translations }: NewsletterSignupProps
         </div>
       </div>
 
-      <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder={newsletter.placeholder}
-          disabled={status === 'loading' || status === 'success'}
-          className="flex-1 px-4 py-3 bg-carbon/50 border border-khaki/20 rounded-lg text-white placeholder-khaki-dark focus:outline-none focus:border-sunflower/50 transition disabled:opacity-50"
-        />
-        <button
-          type="submit"
-          disabled={status === 'loading' || status === 'success'}
-          className="px-6 py-3 bg-gradient-to-r from-accent-orange to-primary-blue-600 text-white rounded-lg font-semibold hover:from-accent-orange-dark hover:to-primary-blue-600-dark transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center gap-2"
-        >
-          {status === 'loading' ? (
-            <div className="w-5 h-5 border-2 border-linen/30 border-t-linen rounded-full animate-spin" />
-          ) : status === 'success' ? (
-            <>
-              <CheckCircle className="h-5 w-5" />
-              Subscribed!
-            </>
-          ) : (
-            <>
-              {newsletter.button}
-              <Send className="h-4 w-4" />
-            </>
-          )}
-        </button>
+      <form onSubmit={handleSubmit} className="flex flex-col gap-3">
+        <style jsx>{`
+          .newsletter-form {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+          }
+          @media (min-width: 640px) {
+            .newsletter-form {
+              flex-direction: row;
+            }
+          }
+        `}</style>
+        <div className="newsletter-form">
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder={newsletter.placeholder}
+            disabled={status === 'loading' || status === 'success'}
+            className="flex-1 px-4 py-3 bg-carbon/50 border border-khaki/20 rounded-lg text-white placeholder-khaki-dark focus:outline-none focus:border-sunflower/50 transition disabled:opacity-50"
+          />
+          <button
+            type="submit"
+            disabled={status === 'loading' || status === 'success'}
+            className="px-6 py-3 bg-gradient-to-r from-accent-orange to-primary-blue-600 text-white rounded-lg font-semibold hover:from-accent-orange-dark hover:to-primary-blue-600-dark transition duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none flex items-center justify-center gap-2"
+          >
+            {status === 'loading' ? (
+              <div className="w-5 h-5 border-2 border-linen/30 border-t-linen rounded-full animate-spin" />
+            ) : status === 'success' ? (
+              <>
+                <CheckCircle className="h-5 w-5" />
+                Subscribed!
+              </>
+            ) : (
+              <>
+                {newsletter.button}
+                <Send className="h-4 w-4" />
+              </>
+            )}
+          </button>
+        </div>
       </form>
 
       {status === 'error' && (

@@ -16,7 +16,7 @@ export default function Footer({ translations: footerTranslations }: FooterProps
   const newsletterTranslations = translations.en.newsletter;
 
   return (
-    <footer className="py-12 px-4 sm:px-6 lg:px-8 border-t border-khaki/10 bg-carbon/50">
+    <footer className="py-12 px-4 border-t border-khaki/10 bg-carbon/50">
       <div className="max-w-7xl mx-auto">
         {/* Newsletter Section */}
         <div className="mb-12">
@@ -24,8 +24,15 @@ export default function Footer({ translations: footerTranslations }: FooterProps
         </div>
 
         {/* Footer Bottom */}
-        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-khaki/10">
-          <div className="flex items-center space-x-2 mb-4 md:mb-0">
+        <div className="flex flex-col justify-between items-center pt-8 border-t border-khaki/10 gap-4" style={{ flexDirection: 'column' }}>
+          <style jsx>{`
+            @media (min-width: 768px) {
+              .footer-content {
+                flex-direction: row;
+              }
+            }
+          `}</style>
+          <div className="footer-content flex items-center space-x-2 flex-col">
             <Brain className="h-6 w-6 text-accent-orange" />
             <span className="text-xl font-bold text-white">A-VH</span>
           </div>

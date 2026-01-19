@@ -32,10 +32,10 @@ export default function IndustriesSection({ translations }: IndustriesSectionPro
   ];
 
   return (
-    <section ref={elementRef} className="py-20 px-4 sm:px-6 lg:px-8">
+    <section ref={elementRef} className="py-20 px-4">
       <div className="max-w-7xl mx-auto">
-        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+        <div className={`text-center mb-16 transition duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <h2 className="text-4xl font-bold text-white mb-4" style={{ fontSize: 'clamp(2rem, 5vw, 3rem)' }}>
             {industries.title}
           </h2>
           <p className="text-xl text-gray-400">
@@ -43,7 +43,7 @@ export default function IndustriesSection({ translations }: IndustriesSectionPro
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid gap-6" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))' }}>
           {industries.items.map((item, idx) => {
             const Icon = icons[idx];
             const gradient = colors[idx];
@@ -51,10 +51,10 @@ export default function IndustriesSection({ translations }: IndustriesSectionPro
             return (
               <div
                 key={idx}
-                className={`transition-all duration-700 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
+                className={`transition duration-700 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}
                 style={{ transitionDelay: `${idx * 100}ms` }}
               >
-                <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur p-6 rounded-xl border border-white/10 hover:border-white/20 transition-all duration-300 h-full hover:scale-105">
+                <div className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur p-6 rounded-xl border border-white/10 hover:border-white/20 transition duration-300 h-full hover:scale-105">
                   <div className={`w-14 h-14 bg-gradient-to-br ${gradient} rounded-lg flex items-center justify-center mb-4`}>
                     <Icon className="h-7 w-7 text-white" />
                   </div>

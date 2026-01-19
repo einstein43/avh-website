@@ -79,10 +79,10 @@ export default function StatsSection({ translations }: StatsSectionProps) {
   ];
 
   return (
-    <section ref={elementRef} className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900/30">
+    <section ref={elementRef} className="py-20 px-4 bg-slate-900/30">
       <div className="max-w-7xl mx-auto">
-        <div className={`text-center mb-12 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+        <div className={`text-center mb-12 transition duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <h2 className="text-4xl font-bold text-white mb-4" style={{ fontSize: 'clamp(2rem, 5vw, 3rem)' }}>
             {stats.title}
           </h2>
           <p className="text-xl text-khaki">
@@ -90,7 +90,7 @@ export default function StatsSection({ translations }: StatsSectionProps) {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid gap-8" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))' }}>
           {statsData.map((stat, idx) => (
             <StatItem
               key={idx}

@@ -33,10 +33,10 @@ export default function ServicesSection({ translations }: ServicesSectionProps) 
   const { elementRef, isVisible } = useScrollAnimation({ threshold: 0.15 });
 
   return (
-    <section id="services" className="py-20 px-4 sm:px-6 lg:px-8 bg-carbon/50">
+    <section id="services" className="py-20 px-4 bg-carbon/50">
       <div ref={elementRef} className="max-w-7xl mx-auto">
-        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+        <div className={`text-center mb-16 transition duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <h2 className="text-4xl font-bold text-white mb-4" style={{ fontSize: 'clamp(2rem, 5vw, 3rem)' }}>
             {services.title}
           </h2>
           <p className="text-xl text-khaki">
@@ -44,8 +44,8 @@ export default function ServicesSection({ translations }: ServicesSectionProps) 
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-          <div className={`transition-all duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div className="grid gap-8" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
+          <div className={`transition duration-700 delay-100 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <ServiceCard
               icon={TrendingUp}
               iconColor="bg-accent-orange/20"
@@ -57,7 +57,7 @@ export default function ServicesSection({ translations }: ServicesSectionProps) 
             />
           </div>
 
-          <div className={`transition-all duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className={`transition duration-700 delay-300 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <ServiceCard
               icon={BarChart3}
               iconColor="bg-primary-blue-600/20"
@@ -69,7 +69,7 @@ export default function ServicesSection({ translations }: ServicesSectionProps) 
             />
           </div>
 
-          <div className={`transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className={`transition duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <ServiceCard
               icon={Settings}
               iconColor="bg-khaki/20"

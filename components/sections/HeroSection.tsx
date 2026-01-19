@@ -42,7 +42,7 @@ export default function HeroSection({ translations }: HeroSectionProps) {
   ];
 
   return (
-    <section id="home" className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section id="home" className="pt-32 pb-20 px-4 relative overflow-hidden">
       {/* Animated background gradients with parallax */}
       <div 
         className="absolute inset-0 bg-gradient-radial from-primary-blue-600/20 via-transparent to-transparent animate-pulse-slow"
@@ -67,44 +67,53 @@ export default function HeroSection({ translations }: HeroSectionProps) {
         }}
       />
       
-      <div ref={elementRef} className={`max-w-7xl mx-auto relative z-10 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+      <div ref={elementRef} className={`max-w-7xl mx-auto relative z-10 transition duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
         <div className="text-center">
           <div className="inline-flex items-center space-x-2 bg-accent-orange/20 rounded-full px-4 py-2 mb-6 animate-fade-in">
             <Sparkles className="h-4 w-4 text-accent-orange" />
             <span className="text-sm text-accent-orange-light">AI Software Solutions</span>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 animate-slide-up">
+          <h1 className="text-5xl font-bold text-white mb-6 animate-slide-up" style={{ fontSize: 'clamp(2.5rem, 7vw, 4.5rem)' }}>
             {hero.title}
             <br />
             <span className="gradient-text">{hero.titleHighlight}</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-khaki mb-10 max-w-3xl mx-auto animate-slide-up">
+          <p className="text-xl text-khaki mb-10 max-w-3xl mx-auto animate-slide-up" style={{ fontSize: 'clamp(1rem, 2vw, 1.5rem)' }}>
             {hero.subtitle}
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up">
-            <a
-              href="#contact"
-              className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-accent-orange to-primary-blue-600 text-white rounded-lg font-semibold hover:from-accent-orange-dark hover:to-primary-blue-600-dark transition-all duration-300 transform hover:scale-105 hover:shadow-2xl hover:shadow-sunflower/50 relative overflow-hidden"
-            >
-              <span className="relative z-10">{hero.cta}</span>
-              <ArrowRight className="ml-2 h-5 w-5 relative z-10 group-hover:translate-x-1 transition-transform duration-300" />
-              <div className="absolute inset-0 bg-gradient-to-r from-accent-orange-dark to-primary-blue-600-dark opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </a>
-            <a
-              href="#services"
-              className="group inline-flex items-center px-8 py-4 bg-linen/10 backdrop-blur text-white rounded-lg font-semibold hover:bg-linen/20 transition-all duration-300 border border-khaki/20 hover:border-sunflower/40 hover:shadow-xl transform hover:scale-105"
-            >
-              {hero.ctaSecondary}
-              <ChevronRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
-            </a>
+          <div className="flex flex-col gap-4 justify-center animate-slide-up" style={{ flexDirection: 'column' }}>
+            <style jsx>{`
+              @media (min-width: 640px) {
+                .button-row {
+                  flex-direction: row;
+                }
+              }
+            `}</style>
+            <div className="button-row flex gap-4 justify-center flex-col">
+              <a
+                href="#contact"
+                className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-accent-orange to-primary-blue-600 text-white rounded-lg font-semibold hover:from-accent-orange-dark hover:to-primary-blue-600-dark transition duration-300 transform hover:scale-105 hover:shadow-2xl relative overflow-hidden"
+              >
+                <span className="relative z-10">{hero.cta}</span>
+                <ArrowRight className="ml-2 h-5 w-5 relative z-10 group-hover:translate-x-1 transition-transform duration-300" />
+                <div className="absolute inset-0 bg-gradient-to-r from-accent-orange-dark to-primary-blue-600-dark opacity-0 group-hover:opacity-100 transition opacity duration-300" />
+              </a>
+              <a
+                href="#services"
+                className="group inline-flex items-center px-8 py-4 bg-linen/10 backdrop-blur text-white rounded-lg font-semibold hover:bg-linen/20 transition duration-300 border border-khaki/20 hover:border-sunflower/40 hover:shadow-xl transform hover:scale-105"
+              >
+                {hero.ctaSecondary}
+                <ChevronRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform duration-300" />
+              </a>
+            </div>
           </div>
         </div>
 
         {/* Floating icons */}
-        <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+        <div className="mt-20 grid grid-cols-2 gap-8 max-w-4xl mx-auto" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))' }}>
           {iconItems.map((item, idx) => (
             <IconCard
               key={idx}

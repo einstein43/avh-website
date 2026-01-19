@@ -30,12 +30,12 @@ export default function ProcessSection({ translations }: ProcessSectionProps) {
   ];
 
   return (
-    <section ref={elementRef} className="py-20 px-4 sm:px-6 lg:px-8 bg-carbon/30 relative overflow-hidden">
+    <section ref={elementRef} className="py-20 px-4 bg-carbon/30 relative overflow-hidden">
       <div className="absolute top-0 right-0 w-96 h-96 bg-accent-orange/5 rounded-full blur-3xl" />
       
       <div className="max-w-7xl mx-auto relative z-10">
-        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+        <div className={`text-center mb-16 transition duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <h2 className="text-4xl font-bold text-white mb-4" style={{ fontSize: 'clamp(2rem, 5vw, 3rem)' }}>
             {process.title}
           </h2>
           <p className="text-xl text-khaki">
@@ -45,9 +45,9 @@ export default function ProcessSection({ translations }: ProcessSectionProps) {
 
         <div className="relative">
           {/* Connection line */}
-          <div className="hidden lg:block absolute top-24 left-0 right-0 h-0.5 bg-gradient-to-r from-accent-orange via-indigo via-sunflower-light to-khaki opacity-20" />
+          <div className="hidden-mobile absolute top-24 left-0 right-0 h-0.5 bg-gradient-to-r from-accent-orange via-indigo via-sunflower-light to-khaki opacity-20" style={{ display: 'none' }} />
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid gap-8" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))' }}>
             {process.steps.map((step, idx) => {
               const Icon = icons[idx];
               const color = colors[idx];
@@ -55,7 +55,7 @@ export default function ProcessSection({ translations }: ProcessSectionProps) {
               return (
                 <div
                   key={idx}
-                  className={`relative transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+                  className={`relative transition duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
                   style={{ transitionDelay: `${idx * 150}ms` }}
                 >
                   {/* Step number badge */}
@@ -84,7 +84,7 @@ export default function ProcessSection({ translations }: ProcessSectionProps) {
 
                   {/* Arrow connector */}
                   {idx < 3 && (
-                    <ArrowRight className="hidden lg:block absolute top-24 -right-12 h-8 w-8 text-primary-blue-500/30" />
+                    <ArrowRight className="hidden-mobile absolute top-24 -right-12 h-8 w-8 text-primary-blue-500/30" style={{ display: 'none' }} />
                   )}
                 </div>
               );

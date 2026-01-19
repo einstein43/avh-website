@@ -32,10 +32,10 @@ export default function CaseStudiesSection({ translations }: CaseStudiesSectionP
   ];
 
   return (
-    <section ref={elementRef} className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900/50">
+    <section ref={elementRef} className="py-20 px-4 bg-slate-900/50">
       <div className="max-w-7xl mx-auto">
-        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+        <div className={`text-center mb-16 transition duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <h2 className="text-4xl font-bold text-white mb-4" style={{ fontSize: 'clamp(2rem, 5vw, 3rem)' }}>
             {cases.title}
           </h2>
           <p className="text-xl text-gray-400">
@@ -43,14 +43,14 @@ export default function CaseStudiesSection({ translations }: CaseStudiesSectionP
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid gap-8" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))' }}>
           {cases.items.map((item, idx) => (
             <div
               key={idx}
-              className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+              className={`transition duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
               style={{ transitionDelay: `${idx * 150}ms` }}
             >
-              <div className={`bg-gradient-to-br ${gradients[idx]} backdrop-blur p-6 rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300 h-full flex flex-col group`}>
+              <div className={`bg-gradient-to-br ${gradients[idx]} backdrop-blur p-6 rounded-2xl border border-white/10 hover:border-white/20 transition duration-300 h-full flex flex-col group`}>
                 {/* Header */}
                 <div className="mb-4">
                   <div className="text-sm text-primary-blue-400 font-semibold mb-1">{item.industry}</div>

@@ -47,14 +47,14 @@ export default function TestimonialsSection({ translations }: TestimonialsSectio
   const current = testimonials.items[currentIndex];
 
   return (
-    <section ref={elementRef} className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900/50 relative overflow-hidden">
+    <section ref={elementRef} className="py-20 px-4 bg-slate-900/50 relative overflow-hidden">
       {/* Background decoration */}
 <div className="absolute top-0 left-0 w-64 h-64 bg-accent-orange/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 right-0 w-64 h-64 bg-primary-blue-600/5 rounded-full blur-3xl" />
       
       <div className="max-w-5xl mx-auto relative z-10">
-        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+        <div className={`text-center mb-16 transition duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <h2 className="text-4xl font-bold text-white mb-4" style={{ fontSize: 'clamp(2rem, 5vw, 3rem)' }}>
             {testimonials.title}
           </h2>
           <p className="text-xl text-khaki">
@@ -62,13 +62,14 @@ export default function TestimonialsSection({ translations }: TestimonialsSectio
           </p>
         </div>
 
-        <div className={`relative transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
+        <div className={`relative transition duration-700 delay-200 ${isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'}`}>
           {/* Quote icon */}
           <Quote className="absolute -top-6 -left-4 h-16 w-16 text-primary-blue-500/20 transform -rotate-12" />
           
           {/* Testimonial card */}
           <div 
-            className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur p-8 md:p-12 rounded-2xl border border-purple-500/20 shadow-2xl"
+            className="bg-gradient-to-br from-slate-800/80 to-slate-900/80 backdrop-blur p-8 rounded-2xl border border-purple-500/20 shadow-2xl"
+            style={{ paddingRight: 'clamp(2rem, 5vw, 3rem)' }}
             onMouseEnter={() => setIsAutoPlaying(false)}
             onMouseLeave={() => setIsAutoPlaying(true)}
           >
@@ -83,7 +84,7 @@ export default function TestimonialsSection({ translations }: TestimonialsSectio
             </div>
 
             {/* Content */}
-            <blockquote className="text-xl md:text-2xl text-gray-200 text-center mb-8 leading-relaxed italic">
+            <blockquote className="text-xl text-gray-200 text-center mb-8 leading-relaxed italic" style={{ fontSize: 'clamp(1rem, 2vw, 1.5rem)' }}>
               "{current.content}"
             </blockquote>
 
@@ -103,14 +104,16 @@ export default function TestimonialsSection({ translations }: TestimonialsSectio
           {/* Navigation buttons */}
           <button
             onClick={prevTestimonial}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-16 w-12 h-12 bg-white/10 backdrop-blur hover:bg-white/20 rounded-full flex items-center justify-center transition-all duration-300 border border-white/20 hover:scale-110"
+            className="absolute left-0 top-1/2 w-12 h-12 bg-white/10 backdrop-blur hover:bg-white/20 rounded-full flex items-center justify-center transition duration-300 border border-white/20 hover:scale-110"
+            style={{ transform: 'translateY(-50%) translateX(-2rem)' }}
             aria-label="Previous testimonial"
           >
             <ChevronLeft className="h-6 w-6 text-white" />
           </button>
           <button
             onClick={nextTestimonial}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-16 w-12 h-12 bg-white/10 backdrop-blur hover:bg-white/20 rounded-full flex items-center justify-center transition-all duration-300 border border-white/20 hover:scale-110"
+            className="absolute right-0 top-1/2 w-12 h-12 bg-white/10 backdrop-blur hover:bg-white/20 rounded-full flex items-center justify-center transition duration-300 border border-white/20 hover:scale-110"
+            style={{ transform: 'translateY(-50%) translateX(2rem)' }}
             aria-label="Next testimonial"
           >
             <ChevronRight className="h-6 w-6 text-white" />
@@ -122,10 +125,10 @@ export default function TestimonialsSection({ translations }: TestimonialsSectio
               <button
                 key={idx}
                 onClick={() => setCurrentIndex(idx)}
-                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                className={`h-2 rounded-full transition duration-300 ${
                   idx === currentIndex 
                     ? 'bg-primary-blue-500 w-8' 
-                    : 'bg-gray-600 hover:bg-gray-500'
+                    : 'bg-gray-600 hover:bg-gray-500 w-2'
                 }`}
                 aria-label={`Go to testimonial ${idx + 1}`}
               />

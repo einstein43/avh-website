@@ -20,10 +20,10 @@ export default function IntegrationPartnersSection({ translations }: Integration
   const { elementRef, isVisible } = useScrollAnimation({ threshold: 0.2 });
 
   return (
-    <section ref={elementRef} className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-900/30">
+    <section ref={elementRef} className="py-20 px-4 bg-slate-900/30">
       <div className="max-w-7xl mx-auto">
-        <div className={`text-center mb-16 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+        <div className={`text-center mb-16 transition duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <h2 className="text-4xl font-bold text-white mb-4" style={{ fontSize: 'clamp(2rem, 5vw, 3rem)' }}>
             {integrations.title}
           </h2>
           <p className="text-xl text-gray-400">
@@ -35,18 +35,18 @@ export default function IntegrationPartnersSection({ translations }: Integration
           {integrations.categories.map((category, idx) => (
             <div
               key={idx}
-              className={`transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
+              className={`transition duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}
               style={{ transitionDelay: `${idx * 150}ms` }}
             >
               <h3 className="text-xl font-bold text-white mb-6 text-center">
                 {category.name}
               </h3>
               
-              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+              <div className="grid gap-4" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(100px, 1fr))' }}>
                 {category.partners.map((partner, pidx) => (
                   <div
                     key={pidx}
-                    className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur p-6 rounded-xl border border-white/10 hover:border-purple-500/30 transition-all duration-300 flex items-center justify-center h-24 group hover:scale-105"
+                    className="bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur p-6 rounded-xl border border-white/10 hover:border-purple-500/30 transition duration-300 flex items-center justify-center h-24 group hover:scale-105"
                   >
                     <span className="text-gray-300 font-semibold text-center group-hover:text-white transition-colors">
                       {partner}
@@ -59,7 +59,7 @@ export default function IntegrationPartnersSection({ translations }: Integration
         </div>
 
         {/* Custom integrations note */}
-        <div className={`mt-12 text-center transition-all duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div className={`mt-12 text-center transition duration-700 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="inline-block bg-primary-blue-500/10 border border-purple-500/20 rounded-lg px-6 py-3">
             <p className="text-gray-300">
               <span className="text-primary-blue-400 font-semibold">+</span> Custom API integrations available for any platform

@@ -34,14 +34,14 @@ export default function ROICalculator({ translations }: ROICalculatorProps) {
   const annualSavings = weeklySavings * 52;
 
   return (
-    <section ref={elementRef} className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <section ref={elementRef} className="py-20 px-4 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-1/2 left-0 w-96 h-96 bg-accent-orange/10 rounded-full blur-3xl -translate-y-1/2" />
       <div className="absolute top-1/2 right-0 w-96 h-96 bg-primary-blue-600/10 rounded-full blur-3xl -translate-y-1/2" />
 
       <div className="max-w-6xl mx-auto relative z-10">
-        <div className={`text-center mb-12 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+        <div className={`text-center mb-12 transition duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <h2 className="text-4xl font-bold text-white mb-4" style={{ fontSize: 'clamp(2rem, 5vw, 3rem)' }}>
             {roi.title}
           </h2>
           <p className="text-xl text-khaki">
@@ -49,7 +49,7 @@ export default function ROICalculator({ translations }: ROICalculatorProps) {
           </p>
         </div>
 
-        <div className={`grid md:grid-cols-2 gap-8 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div className={`grid gap-8 transition duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
           {/* Input section */}
           <div className="bg-gradient-to-br from-carbon/80 to-carbon-light/80 backdrop-blur p-8 rounded-2xl border border-sunflower/20">
             <h3 className="text-2xl font-bold text-white mb-6">Input Your Data</h3>

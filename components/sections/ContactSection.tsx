@@ -92,10 +92,10 @@ export default function ContactSection({ language, translations }: ContactSectio
   };
 
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-20 px-4">
       <div ref={elementRef} className="max-w-4xl mx-auto">
-        <div className={`text-center mb-12 transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+        <div className={`text-center mb-12 transition duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <h2 className="text-4xl font-bold text-white mb-4" style={{ fontSize: 'clamp(2rem, 5vw, 3rem)' }}>
             {contact.title}
           </h2>
           <p className="text-xl text-khaki">
@@ -103,7 +103,7 @@ export default function ContactSection({ language, translations }: ContactSectio
           </p>
         </div>
 
-        <div className={`bg-gradient-to-br from-primary-blue-600/50 to-accent-orange/30 p-8 md:p-12 rounded-2xl backdrop-blur border border-sunflower/20 transition-all duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+        <div className={`bg-gradient-to-br from-primary-blue-600/50 to-accent-orange/30 p-8 rounded-2xl backdrop-blur border border-sunflower/20 transition duration-700 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`} style={{ padding: 'clamp(2rem, 5vw, 3rem)' }}>
           {status === 'success' ? (
             <div className="text-center py-8">
               <CheckCircle className="h-16 w-16 text-accent-orange mx-auto mb-4" />
@@ -147,7 +147,7 @@ export default function ContactSection({ language, translations }: ContactSectio
               </div>
 
               {/* Email and Company in a grid */}
-              <div className="grid md:grid-cols-2 gap-6">
+              <div className="grid gap-6" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))' }}>
                 <div>
                   <label className="block text-khaki mb-2 flex items-center gap-2">
                     <Mail className="h-4 w-4" />
